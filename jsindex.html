@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript projet</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <section class="main_container">
+        <!-- project 7 -->
+        <div class="sevenproject">
+            <div id="main-container">
+                <h1>the love yes or no</h1> <br><br>
+                <div id="output"></div> <br><br>
+                <div class="diver">
+                    <button id="btn1">yes❤️</button>
+                    <button id="btn2">no😂</button>
+                </div>
+            </div>
+        </div>
+
+<!-- 1st  -->
+        <div class="script-project">
+            <div class="main-div">
+                <h1>the keyEvent</h1>
+                <div class="keyevent">
+                    <input type="text" id="inputFiled">
+                    <p class="keyPress">press key</p>
+                    <p class="keyCode">key code </p>
+                    <p class="charcode"> key charcode</p>
+                    <p class="type">key type</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- second project  -->
+        <div class="project_2">
+            <h1>the bgColor change and copy paste</h1>
+            <div class="gbtn">
+                <button id="btn3">#2ef27a</button>
+                <button id="btn4">#12efa0</button>
+            </div>
+            <p class="colorFill">
+                background-Image: linear-gradient( to right , rgb(92 , 145, 229) , rgb(152 , 63, 198));
+            </p>
+            
+
+        </div>
+
+        <!-- 3rd project  -->
+        <div class="thirdproject">
+            <form class="todolistc">
+                <div>
+                    <h1>todolist item</h1>
+
+                    <input type="text" id="inputValue">
+
+                    <button id="btn">add todo</button>
+                </div>
+                <div class="todolist-item"></div>
+            </form>
+        </div>
+
+        <!-- 4th -->
+        <div class="fourmain-div">
+            <h1>this is watch</h1>
+            <p id="clock">
+
+            </p>
+        </div>
+        <!-- 5th -->
+
+        <div class="fivemain-div">
+            <p id="showTime">Get Start Time</p>
+            <div class="allbtn">
+            <button class="btn1">start</button> <button class="btn2">reset</button>
+
+            <button class="btn3">stop</button> <button class="btn4">getTime</button>
+
+            <button class="btn5">clearTime</button>
+        </div>
+            <div id="countValue"> </div>
+        </div>
+
+        <!-- 6th  -->
+        <div class="sixproject">
+            <section class="header">
+                <p class="para">the dad jokes is fun 😂</p>
+                <section id="resData"></section> <br>
+                <button id="fetchAPI">next joke ➡️...</button>
+            </section>
+        </div>
+        <!-- 7th  -->
+
+    </section>
+    <script>
+
+        let input1 = document.getElementById('inputFiled')
+
+        const eventName = (event) => {
+            console.log(event);
+
+            document.querySelector('.keyPress').innerText = ` press key = ${event.key}`
+            document.querySelector('.keyCode').innerText = `key code = ${event.code}`
+            document.querySelector('.charcode').innerText = `keycharcode = ${event.key.charCodeAt(0)}`
+            document.querySelector('.type').innerText = `type = ${event.type}`
+
+        }
+
+        input1.addEventListener('keydown', eventName)
+
+        // second 
+        let button1 = document.getElementById("btn3")
+        let button2 = document.getElementById("btn4")
+        let pFill = document.querySelector('.colorFill')
+
+        let rgb1 = "#2ef27a"
+        let rgb2 = "#12efa0"
+
+        const hexG = () => {
+            let hexvalue = "0123456789abcdef"
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color = color + hexvalue[(Math.random(i) * 16).toFixed(0)]
+            };
+
+            return color;
+        }
+
+        const gredient = () => {
+            rgb1 = hexG();
+            button1.innerText = rgb1
+            console.log(rgb1);
+            document.body.style.backgroundImage = `linear-gradient( to right , ${rgb1} , ${rgb2})`;
+            pFill.innerHTML = `background-Image: linear-gradient( to right , ${rgb1} , ${rgb2})`;
+
+        };
+        const gredient2 = () => {
+            rgb2 = hexG();
+            button2.innerText = rgb2
+            console.log(rgb2);
+            document.body.style.backgroundImage = `linear-gradient( to right , ${rgb1} , ${rgb2})`;
+            pFill.innerHTML = `background-Image: linear-gradient( to right , ${rgb1} , ${rgb2})`;
+        };
+
+        button1.addEventListener('click', gredient)
+        button2.addEventListener('click', gredient2)
+        pFill.addEventListener('click', () => {
+            navigator.clipboard.writeText(pFill.innerText)
+        })
+
+        // third 
+
+        const input = document.getElementById('inputValue')
+        const button = document.getElementById('btn')
+        const mainTodo = document.querySelector('.todolist-item')
+
+        // get data 
+        const getData = () => {
+            return JSON.parse(localStorage.getItem('storeData'))
+        }
+        const localStoreArr = (Arr) => {
+            return localStorage.setItem('storeData', JSON.stringify(Arr))
+        }
+
+        let Arr = getData() || [];
+
+        const addDynimikli = (currElm) => {
+            const createElm = document.createElement('div')
+            createElm.classList.add('mainlist')
+            createElm.innerHTML = ` <li>${currElm}</li> <button class="delBtn"> delete</button>`
+            mainTodo.append(createElm)
+        }
+
+        const myBtn = (e) => {
+            e.preventDefault();
+
+            // Array store 
+            const localStr = input.value.trim();
+
+            if (localStr !== "" && !Arr.includes(localStr)) {
+
+                Arr.push(localStr)
+                Arr = [...new Set(Arr)]
+                localStorage.setItem('storeData', JSON.stringify(Arr))
+                // console.log(Arr);
+                addDynimikli(localStr)
+
+            }
+            input.value = ""
+        }
+
+        const showGetData = () => {
+            Arr.forEach((currElm) => {
+                addDynimikli(currElm)
+            })
+
+        }
+
+        showGetData()
+
+        const delTarget = (e) => {
+            const todoToRemove = event.target
+            let todoCantant = todoToRemove.previousElementSibling.innerText
+            let perentElm = todoToRemove.parentElement;
+            console.log(todoCantant);
+
+            Arr = Arr.filter((curtodo) => {
+                return curtodo !== todoCantant.toLowerCase();
+
+            })
+            localStoreArr(Arr)
+            perentElm.remove();
+            console.log(Arr);
+        }
+
+        mainTodo.addEventListener('click', (e) => {
+            e.preventDefault()
+            if (e.target.classList.contains('delBtn')) {
+                delTarget(e);
+            }
+
+        })
+        button.addEventListener('click', (e) => {
+            myBtn(e)
+        })
+
+        // 4th
+        const newUp = () => {
+
+            const watch = new Date().toLocaleTimeString()
+            document.getElementById("clock").innerText = watch
+
+        }
+
+        setInterval(() => {
+            newUp()
+        }, 1000)
+
+        // 5th 
+        const timer = document.getElementById("showTime")
+        const value = document.getElementById("countValue")
+
+
+        let count = 0;
+        let countId;
+
+        const starte = () => {
+            countId = setInterval(() => {
+                timer.innerText = count++;
+            }, 1000);
+        };
+
+        const stop = () => {
+            clearInterval(countId)
+        }
+
+        const reset = () => {
+            count = 0;
+            timer.innerText = count;
+            clearInterval(countId)
+        }
+        const getTime = () => {
+            let newP = document.createElement('p')
+            newP.innerText = `${count - 1}`
+            value.append(newP)
+        }
+        let clearValue = () => {
+            value.innerHTML = ""
+        }
+
+
+
+        document.querySelector(".btn4").addEventListener('click', getTime)
+        document.querySelector(".btn5").addEventListener('click', clearValue)
+
+        document.querySelector(".btn1").addEventListener('click', starte)
+        document.querySelector(".btn2").addEventListener('click', reset)
+        document.querySelector(".btn3").addEventListener('click', stop)
+
+
+        //  6th project
+
+        const apiData = document.getElementById("resData")
+
+        const url = "https://icanhazdadjoke.com/"
+
+        async function fetchData() {
+            try {
+                const res = await fetch(url, {
+                    headers: {
+                        Accept: "application/json"
+                    },
+                })
+                const data = await res.json()
+                console.log(data.joke);
+                apiData.textContent = data.joke
+
+            } catch (error) {
+                console.log(error);
+                apiData.textContent = `api not get ... plz try again`
+            }
+
+        }
+        fetchData()
+
+        document.getElementById("fetchAPI").addEventListener("click", fetchData)
+
+
+        // 7th 
+
+        const btn1 = document.getElementById("btn1")
+        const output = document.getElementById("output")
+        const btn2 = document.getElementById("btn2")
+
+        const target = () => {
+            const maxWidth = 600;
+            const maxHeight = 600;
+
+            const random = Math.floor(Math.random() * maxWidth)
+            const random2 = Math.floor(Math.random() * maxHeight)
+
+            console.log(random, random2);
+            btn2.style.left = random + "px";
+            btn2.style.top = random2 + "px";
+        }
+
+        const yes = () => {
+            output.innerText = ["i love you too", "the most beautyfull of you", "you have world for million of you"]
+
+        }
+
+        btn1.addEventListener("click", yes)
+        btn2.addEventListener('mouseenter', target)
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="stylep.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="./image2/favicon.webp" type="image/x-icon">
+    <!--======== all fonts=========== -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+CU:wght@100..400&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+CU:wght@100..400&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+CU:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Jersey+15&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+CU:wght@100..400&display=swap"
+        rel="stylesheet">
+    <!--======== all fonts end=========== -->
+</head>
+<style>
+    .bg {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px solid rgba(235, 235, 235, 0.158);
+        padding: 0rem 0rem 2rem 0rem;
+    }
+
+    .second_section {
+        background-color: var(--main-color);
+    }
+
+    .exprience {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 70rem);
+    }
+
+    .about-section {
+        background-color: #131111;
+        padding: 3rem 0rem;
+
+        & h1 {
+            font-size: 5rem;
+            padding: 0rem 4rem;
+            color: var(--btn-color);
+            font-family: "Josefin Sans", sans-serif;
+        }
+    }
+
+    /* .bright {
+        cursor: pointer;
+    }
+
+    .dark_theme {
+        background-color: rgb(238, 58, 76);
+    } */
+
+    .award {
+        background-color: var(--main-color);
+    }
+
+    .favTools-forColumns {
+        margin-top: 4rem;
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-template-rows: repeat(3, 30rem);
+        gap: 7rem;
+        padding: 2rem 4rem;
+
+
+        & .card {
+            border: 5px solid #ffae00;
+            width: 32rem;
+            height: 32rem;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+            background-color: #4a4c5c;
+
+
+            & img {
+                box-shadow: #ffae00 0px 5px 25px;
+                height: 25rem;
+                width: 25rem;
+                margin-top: 3rem;
+                position: absolute;
+                object-fit: cover;
+                top: 0;
+                left: 2.2rem;
+                opacity: 0.5;
+                transition: opacity .2s ease-out;
+
+            }
+
+            h2 {
+                position: absolute;
+                inset: auto auto 30px 30px;
+                margin: 1.5rem;
+                transition: inset .3s .3s ease-out;
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: normal;
+                text-transform: uppercase;
+                font-size: 2rem;
+                color: #ff002b;
+                font-weight: bolder;
+            }
+
+            p {
+                position: absolute;
+                opacity: 0;
+                /* max-width: 90%; */
+                transition: opacity .3s ease-out;
+                color: #e1d767;
+                font-size: 2rem;
+                font-weight: bold;
+                padding: 1rem .5rem;
+                background-color: #131111ac;
+            }
+
+            p {
+                inset: auto auto 0px 0px;
+            }
+
+            /* a{
+                inset: auto auto 40px 30px;
+                color: inherit;
+                text-decoration: none;
+                font-size: 1.5rem;
+                color: green;
+            } */
+
+            &:hover h2 {
+                inset: auto auto 150px 30px;
+                transition: inset .3s ease-out;
+            }
+
+            &:hover p,
+            &:hover a {
+                opacity: 1;
+                transition: opacity .5s .1s ease-in;
+            }
+
+            &:hover img {
+                transition: opacity .3s ease-in;
+                opacity: 1;
+            }
+
+        }
+
+        .material-symbols-outlined {
+            vertical-align: middle;
+        }
+
+
+    }
+
+    @media (width < 690px) {
+
+
+        .exprience {
+
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(1, 70rem);
+            padding: 2rem 3rem;
+
+        }
+
+        .award_div {
+            margin-top: 1rem;
+            padding: 2rem 2rem;
+        }
+    }
+</style>
+
+<body>
+    <section class="complrt_website_container">
+        <section class="bg">
+            <div class="li_logo">
+                <iframe src="https://giphy.com/embed/0D4Gj5Dw8UppBHf8Ed" class="giphy-embed" allowFullScreen></iframe>
+                <!-- <img src="./image2/3dlogo.png" alt="icon show" class="img_logo"> -->
+            </div>
+            <!-- <div>
+                <i class="fa-solid bright fa-lightbulb"></i>
+            </div> -->
+            <nav class="navbar">
+                <ul class="unlist">
+                    <li>
+                        <a href="./index.html" loading="lazy">HOME</a>
+                    </li>
+
+                    <li>
+                        <a href="./aboutPage.html">ABOUT</a>
+                    </li>
+
+                    <li>
+                        <a href="./portfoliyo.html">PORTFOLIO</a>
+                    </li>
+
+                    <li>
+                        <a href="./blog.html">BLOG</a>
+                    </li>
+
+                    <li>
+                        <a href="./contect.html">CONTECT</a>
+                    </li>
+                    <!-- <li>
+                    <a href=".bg-center">CONTECT
+                       
+                    </a>
+                </li> -->
+
+                </ul>
+            </nav>
+
+            <div class="two_icon">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-regular fa-circle-xmark"></i>
+            </div>
+        </section>
+
+        <section class="about-section">
+
+            <h1>My Favourite Tools like.</h1>
+            <div class="favTools-forColumns" data-aos="fade-up">
+                <div class="card">
+                    <a href="https://www.psdstack.com/resources/photoshop-tutorials/"><img src="./image2/fav1.webp"
+                            alt="invailed"></a>
+                    <div class="card-content">
+                        <h2>
+                            Card Heading
+                        </h2>
+                        <p>
+                            Adobe Photoshop is a photo-editing and graphic design software application that allows users
+                            to create, enhance, or edit images, artwork, and illustrations.
+                        </p>
+                        <!-- <a href="#" class="button">
+                            Find out more
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a> -->
+                    </div>
+
+                </div>
+                <div class="card">
+                    <a href="https://www.figma.com/"><img src="./image2/fav2.webp" alt="invailed"></a>
+                    <div class="card-content">
+                        <h2>
+                            Card Heading
+                        </h2>
+                        <p>
+                            Figma Design is for people to create, share, and test designs for websites, mobile apps, and
+                            other digital products and experiences.give feedback.
+                        </p>
+                        <!-- <a href="#" class="button">
+                            Find out more
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a> -->
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://design.tutsplus.com/tutorials/101-adobe-illustrator-tutorials--cms-29782"> <img
+                            src="./image2/fav3.webp" alt="invailed"></a>
+                    <div class="card-content">
+                        <h2>
+                            Card Heading
+                        </h2>
+                        <p>
+                            Artificial intelligence (AI) is a set of technologies that allow computers to perform
+                            complex tasks that were previously only possible for humans.
+                        </p>
+                        <!-- <a href="#" class="button">
+                            Find out more
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a> -->
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://www.sketch.com/"><img src="./image2/fav4.webp" alt="invailed"></a>
+                    <div class="card-content">
+                        <h2>
+                            Card Heading
+                        </h2>
+                        <p>
+                            A sketch is a drawing of an area or an object mainly based on memory and not to scale. -
+                            Sometimes a rough drawing of an area is needed to know where a particular.
+                        </p>
+                        <!-- <a href="#" class="button">
+                            Find out more
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a> -->
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://react.dev/"> <img src="./image2/fav5 - Copy.webp" alt="invailed"></a>
+                    <div class="card-content">
+                        <h2>
+                            Card Heading
+                        </h2>
+                        <p>
+                            How does React Work? React creates a VIRTUAL DOM in memory. Instead of manipulating the
+                            browser's DOM directly, React creates a virtual DOM in memory.
+                        </p>
+                        <!-- <a href="#" class="button">
+                            Find out more
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a> -->
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://www.w3schools.com/html/"> <img src="./image2/fav6.webp" alt="invailed"></a>
+                    <div class="card-content">
+                        <h2>
+                            Card Heading
+                        </h2>
+                        <p>
+                            HTML stands for Hyper Text Markup Language. HTML is the standard markup language for
+                            creating Web pages. HTML describes the structure of a Web page.
+                        </p>
+                        <!-- <a href="#" class="button">
+                            Find out more
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a> -->
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://www.w3schools.com/css/default.asp"> <img src="./image2/fav7 (1).webp"
+                            alt="invailed"></a>
+
+                    <div class="card-content">
+                        <h2>
+                            Card Heading
+                        </h2>
+                        <p>
+                            a style sheet language used for specifying the presentation and styling of a document
+                            written in a markup language such as HTML or XML including.
+                        </p>
+                        <a href="#" class="button">
+                            Find out more
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="https://www.w3schools.com/js/DEFAULT.asp"> <img src="./image2/fav8.webp"
+                            alt="invailed"></a>
+                    <div class="card-content">
+                        <h2>
+                            Card Heading
+                        </h2>
+                        <p>
+                            a cross-platform, object-oriented scripting language used to make webpages interactive
+                            e.g., having complex animations, clickable buttons.
+                        </p>
+                        <a href="#" class="button">
+                            Find out more
+                            <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <section class="second_section">
+                <div class="exprience">
+                    <div data-aos="fade-up-right">
+                        <img src="./image2/3d-character-.webp" alt="invailed" class="imgsecond">
+                    </div>
+                    <div class="abouts" data-aos="fade-up-left">
+                        <h3>crafting experiences one pixel at a time</h3>
+                        <p> the employer wants to see how well your able to articulate your
+                            tasks and responsibilities. Highlighting strengths and weaknesses will emphasize your
+                            self-awareness of your work and 2 year experience. </p>
+
+
+                        <div class="exp_img">
+                            <div>
+                                <img src="./image2/css.webp" alt="invailed">
+                                <p>coding is best</p>
+                            </div>
+                            <div>
+                                <img src="./image2/brand.webp" alt="invailed">
+                                <p>coding is best</p>
+                            </div>
+
+                            <div>
+                                <img src="./image2/code.webp" alt="invailed">
+                                <p>coding is best</p>
+                            </div>
+
+                            <div>
+                                <img src="./image2/dev.webp" alt="invailed">
+                                <p>coding is best</p>
+                            </div>
+
+                        </div>
+                        <a href="https://byjus.com/maths/compound-interest/"><button class="click">here me </button></a>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <section class="center-div">
+                <div class="card-main">
+                    <div class="card1" data-aos="zoom-in-down">
+                        <img src="./image2/brand.webp" alt="" class="img1-card">
+                        <h2 class="h2-card">The HTML Course</h2>
+                        <p>HTML is a markup language used by the browser to manipulate text,
+                            images,
+                        </p>
+                        <a href="#"> <button class="btn2">click here</button></a>
+                    </div>
+                    <div class="card2" data-aos="zoom-in-down">
+                        <img src="./image2/brand.webp" alt="" class="img1-card">
+                        <h2 class="h2-card">The CSS Course</h2>
+                        <p>a style sheet language used for specifying the presentation and styling
+                            of a document
+                        </p>
+                        <a href="#"><button class="btn2">click here</button></a>
+                    </div>
+                    <div class="card3" data-aos="zoom-in-up">
+                        <img src="./image2/code.webp" alt="" class="img1-card">
+                        <h2 class="h2-card">The Javascript course</h2>
+                        <p>help learners write, document, test, and debug code for programs or apps
+                        </p>
+                        <a href="../jsindex.html" target=".blank"> <button class="btn2">click here</button></a>
+                    </div>
+                    <div class="card4" data-aos="zoom-in-up">
+                        <img src="./image2/dev.webp" alt="" class="img1-card">
+                        <h2 class="h2-card">The React course</h2>
+                        <p> one of the most popular JavaScript libraries to develop powerful,
+
+                        </p>
+                        <a href="#"><button class="btn2">click here</button></a>
+                    </div>
+
+                </div>
+
+                <section class="center-section" data-aos="fade-up">
+                    <div class="footerdiv">
+                        <h3 class="h3">our company skills</h3>
+                        <p class="fpara">As you advance in your career, you'll meet many people who can help you grow
+                            professionally. Having a professional introduction ready when you meet someone new, such as
+                            an
+                            interviewer, supervisor, mentor or business contact, can help you establish a positive
+                            reputation with them.</p>
+                        <div class="rediusskill">
+                            <div class="fdiv1">
+                                <div class="rot"></div>
+                                <p class="span1" data-target="1500"></p>
+
+                            </div>
+                            <div class="fdiv2">
+                                <div class="rot"></div>
+                                <p class="span1" data-target="1600"></p>
+                            </div>
+                            <div class="fdiv3">
+                                <div class="rot"></div>
+                                <p class="span1" data-target="1800"></p>
+                            </div>
+                            <div class="fdiv4">
+                                <div class="rot"></div>
+                                <p class="span1" data-target="1300"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section class="award">
+                <div class="award_div">
+                    <div data-aos="zoom-in-right">
+                        <h1>award & recognitions</h1>
+                        <p>In summary, a good introduction to an awards speech should be coding, fitness, leadership,
+                            and
+                            team manegment with confidence. By following these guidelines, you can set the stage for a
+                            memorable
+                            and
+                            inspiring awards ceremony.</p>
+                        <img src="./image2/award.webp" alt="invailed">
+                    </div>
+                    <div class="award_intro" data-aos="zoom-in-left">
+                        <h4>content marketing</h4>
+                        <span class="all">winner 2022 </span>
+
+                        <h4>winner player</h4>
+                        <span class="all">winner 2022 </span>
+
+
+                        <h4>leadership</h4>
+                        <span class="all">winner 2023 </span>
+
+                        <h4>team manegment</h4>
+                        <span class="all">winner 2024 </span>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="index.js"></script>
+
+</body>
+
+</html>
